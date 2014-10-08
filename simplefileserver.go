@@ -28,7 +28,7 @@ func main() {
 	fmt.Printf("Publishing \"%v\" on \"%v\"", *path, url)
 
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir(*path))))
-	if err := http.ListenAndServe(url, nil); err != nil {
+	if err := http.ListenAndServe(":"+string(*port), nil); err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
 }
