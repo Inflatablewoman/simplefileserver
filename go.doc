@@ -1,0 +1,5 @@
+// Package used as basic interface to the FileServer functionality
+//
+// Current version: experimental
+//
+package main
