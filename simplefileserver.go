@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os/user"
 )
 
 func main() {
@@ -13,14 +12,8 @@ func main() {
 	// Get port
 	port := flag.String("port", "1979", "Port number to listen on")
 
-	// Work out the current users home directory
-	usr, err := user.Current()
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	// Get path
-	path := flag.String("path", usr.HomeDir, "Path to publish")
+	path := flag.String("path", ".", "Path to publish.  Default is current directory")
 
 	flag.Parse()
 
